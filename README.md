@@ -39,13 +39,3 @@ python scripts/eval_c3_c4_c6_summary.py --variant tf_pocket_v3
 ```
 
 ---
-
-## Citation
-
-Manuscript under preparation. A preprint and final citation will be added here once the submission is filed.
-
----
-
-## License
-
-MIT (see `pyproject.toml`). Vendored upstream code retains its own licenses — see `vendor/<package>/LICENSE`.
