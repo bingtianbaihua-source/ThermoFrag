@@ -1,0 +1,16 @@
+{
+  "pdb": "4UMX",
+  "center": [
+    -3.59,
+    23.75,
+    92.14
+  ],
+  "size": [
+    22.5,
+    24.3,
+    22.5
+  ],
+  "cognate_resname": "NAP",
+  "cognate_n_atoms": 48,
+  "source": "cognate"
+}

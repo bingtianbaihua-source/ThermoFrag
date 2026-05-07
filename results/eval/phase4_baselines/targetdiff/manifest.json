@@ -1,0 +1,73 @@
+{
+  "baseline": "targetdiff",
+  "checkpoint_path": "/home/zhao/code/ThermoFrag/vendor/targetdiff/pretrained_models/pretrained_diffusion.pt",
+  "checkpoint_sha256": "8977821339ba31b7103b46835ef4ddbf7f15f3f2efc5cb1f2a405e7905b09db6",
+  "sampling": {
+    "n_request_per_target": 200,
+    "n_keep_per_target": 100,
+    "batch_size": 100,
+    "num_steps": 1000,
+    "seed": 2021,
+    "radius": 10,
+    "center_pos_mode": "protein",
+    "sample_num_atoms": "prior"
+  },
+  "per_target": {
+    "MTORC1": {
+      "n_candidates": 200,
+      "n_invalid": 30,
+      "n_duplicate": 0,
+      "n_kept": 100,
+      "n_requested": 200,
+      "n_recon_ok": 196,
+      "seconds": 9120.97
+    },
+    "OPRK1": {
+      "n_candidates": 200,
+      "n_invalid": 10,
+      "n_duplicate": 0,
+      "n_kept": 100,
+      "n_requested": 200,
+      "n_recon_ok": 200,
+      "seconds": 7583.3
+    },
+    "PKM2": {
+      "n_candidates": 200,
+      "n_invalid": 7,
+      "n_duplicate": 0,
+      "n_kept": 100,
+      "n_requested": 200,
+      "n_recon_ok": 199,
+      "seconds": 8260.39
+    },
+    "PPARG": {
+      "n_candidates": 200,
+      "n_invalid": 1,
+      "n_duplicate": 0,
+      "n_kept": 100,
+      "n_requested": 200,
+      "n_recon_ok": 197,
+      "seconds": 6692.18
+    },
+    "TP53": {
+      "n_candidates": 200,
+      "n_invalid": 8,
+      "n_duplicate": 0,
+      "n_kept": 100,
+      "n_requested": 200,
+      "n_recon_ok": 195,
+      "seconds": 5168.02
+    },
+    "VDR": {
+      "n_candidates": 200,
+      "n_invalid": 14,
+      "n_duplicate": 0,
+      "n_kept": 100,
+      "n_requested": 200,
+      "n_recon_ok": 198,
+      "seconds": 8064.23
+    }
+  },
+  "targetdiff_git_sha": "63fca3c64e39171a85fddda8e66661b1af97f47c",
+  "wall_clock_seconds": 44890.72
+}

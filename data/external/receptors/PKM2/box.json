@@ -1,0 +1,16 @@
+{
+  "pdb": "3GR4",
+  "center": [
+    10.02,
+    2.98,
+    13.64
+  ],
+  "size": [
+    26.06,
+    22.5,
+    22.5
+  ],
+  "cognate_resname": "DYY",
+  "cognate_n_atoms": 60,
+  "source": "cognate"
+}

@@ -1,0 +1,16 @@
+{
+  "pdb": "6B73",
+  "center": [
+    60.38,
+    -24.65,
+    -5.0
+  ],
+  "size": [
+    22.5,
+    22.5,
+    22.5
+  ],
+  "cognate_resname": "CVV",
+  "cognate_n_atoms": 33,
+  "source": "cognate"
+}

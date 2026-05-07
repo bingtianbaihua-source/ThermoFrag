@@ -1,0 +1,19 @@
+pushed,responded,category,label
+hba,tpsa,A,polar geometry
+tpsa,hba,A,polar geometry
+hbd,tpsa,A,polar geometry
+tpsa,hbd,A,polar geometry
+tpsa,mw,A,size-polarity
+logP,mw,A,size-lipophilicity
+mw,logP,A,size-lipophilicity
+mw,qed,B,QED penalty
+tpsa,qed,B,QED penalty
+hba,qed,B,QED penalty
+rotb,qed,B,QED penalty
+logP,qed,B,QED penalty
+logP,tpsa,C,polarity-lipophilicity
+tpsa,logP,C,polarity-lipophilicity
+logP,sa,D,complexity-accessibility
+sa,logP,D,complexity-accessibility
+hba,hbd,E,HBA-HBD allocation
+hbd,hba,E,HBA-HBD allocation

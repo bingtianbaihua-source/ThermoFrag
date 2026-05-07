@@ -1,0 +1,16 @@
+{
+  "pdb": "4DRI",
+  "center": [
+    35.51,
+    49.95,
+    36.03
+  ],
+  "size": [
+    23.97,
+    23.68,
+    22.5
+  ],
+  "cognate_resname": "RAP",
+  "cognate_n_atoms": 65,
+  "source": "cognate"
+}

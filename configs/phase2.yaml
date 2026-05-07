@@ -1,0 +1,31 @@
+# Phase 2 production config: PCD training of CouplingPotential on ZINC.
+# Targets the Phase-2 exit criterion from docs/MILESTONES.md:
+#   KL(generated || ZINC) on first three property marginals < 0.05.
+
+defaults: default
+
+run:
+  name: thermofrag_phase2
+
+training:
+  phase: pretrain_coupling
+  batch_size: 32
+  epochs: 3          # 3 * (224510/32) ≈ 21000 steps; ~50 min at 270 samples/sec
+  log_every: 100
+  ckpt_every: 500
+  mh_steps: 5
+  grad_clip: 5.0
+  lr: 2.0e-4
+  weight_decay: 1.0e-5
+  loss_weights:
+    couple_l2: 1.0e-3
+  pcd:
+    buffer_size: 4096
+    refresh_frac: 0.05
+    init_from: data
+
+model:
+  coupling:
+    hidden: 256
+    num_layers: 4
+    mh_beta: 1.0

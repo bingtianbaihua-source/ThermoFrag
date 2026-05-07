@@ -1,0 +1,16 @@
+{
+  "pdb": "2P15",
+  "center": [
+    -35.14,
+    5.05,
+    20.79
+  ],
+  "size": [
+    22.5,
+    22.5,
+    22.5
+  ],
+  "cognate_resname": "EZT",
+  "cognate_n_atoms": 32,
+  "source": "cognate"
+}

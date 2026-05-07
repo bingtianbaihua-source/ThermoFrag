@@ -1,0 +1,18 @@
+{
+  "chain_idx": 6,
+  "smiles": "CC1=CC2SC3C=C(F)[C@](O)([C@@H]4C[C@@H](C5=CCC(OO)=CC5)C[C@@H]4C)CC3=C2C=C1",
+  "vina_score": -10.81,
+  "vina_pose_score": -10.82,
+  "formal_charge": 0,
+  "charge_method": "bcc",
+  "mm_gbsa_total": -54.6107,
+  "mm_gbsa_vdw": -55.0323,
+  "mm_gbsa_eel": -0.3932,
+  "mm_gbsa_egb": 8.7111,
+  "mm_gbsa_esurf": -7.8963,
+  "mm_gbsa_gas": -55.4255,
+  "mm_gbsa_solv": 0.8148,
+  "status": "ok",
+  "note": "",
+  "runtime_s": 522.7507491111755
+}

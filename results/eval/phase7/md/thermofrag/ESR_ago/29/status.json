@@ -1,0 +1,18 @@
+{
+  "generator": "thermofrag",
+  "target": "ESR_ago",
+  "chain_idx": 29,
+  "status": "equilibration_nan",
+  "note": "post-min PE not physical: 311829046.6238387",
+  "n_atoms": 86556,
+  "n_water": 26030,
+  "duration_ns": 20.0,
+  "wall_seconds_equil": 0.0,
+  "wall_seconds_prod": 0.0,
+  "rmsd_mean": null,
+  "rmsd_std": null,
+  "rmsd_max": null,
+  "frac_below_3A": null,
+  "n_persistent_contacts": null,
+  "contact_persistence": null
+}

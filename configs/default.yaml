@@ -1,0 +1,95 @@
+# Default ThermoFrag config sized for a single 4060 16 GB.
+# All numbers cross-referenced in docs/HARDWARE.md.
+
+run:
+  name: thermofrag_default
+  seed: 42
+  device: cuda
+  precision: bf16
+  out_dir: results
+
+data:
+  fragment_library: data/processed/fragment_library.parquet
+  # qm_train points at the preprocess root with train/ and val/ subdirs
+  # (build_spice_loaders auto-discovers the val split). Use --data-qm-train
+  # on the CLI to override.
+  qm_train: data/processed/spice
+  qm_test: data/processed/qmugs
+  unconditional: data/processed/zinc_unconditional.lmdb
+  conditional: data/processed/chembl_conditional.lmdb
+  litpcba_root: data/processed/litpcba
+
+model:
+  qm:
+    backbone: painn
+    hidden: 128
+    num_layers: 4
+    cutoff: 5.0
+    n_radial: 20
+    elements: [H, C, N, O, F, P, S, Cl, Br]
+    warm_start: null  # set to a path to MACE-OFF23-small embedding to warm start
+  coupling:
+    backbone: gine
+    hidden: 256
+    num_layers: 4
+    pool: set2set
+    n_fragments: null   # null -> inferred from dataset meta at load time
+    n_bond_types: 8
+    mh_beta: 1.0        # inverse temperature used by FragmentNodeFlipMH during PCD
+    warm_start: null
+  external_field:
+    properties: [logP, qed, sa, tpsa, mw, hba, hbd, rotb]
+    hidden: 256
+    laplace_last_layer: true
+
+training:
+  phase: pretrain_qm   # pretrain_qm | pretrain_coupling | joint
+  batch_size: 32
+  num_workers: 4
+  grad_accum: 1
+  max_atoms: 50
+  optimizer: adamw
+  lr: 3.0e-4
+  weight_decay: 1.0e-5
+  epochs: 30
+  log_every: 50
+  ckpt_every: 1000
+  loss_weights:
+    qm_energy: 1.0
+    qm_force: 0.5
+    couple: 0.1
+    mu: 0.1
+    detailed_balance: 0.01
+    vocab: 0.0   # off in v0
+  pcd:
+    buffer_size: 4096
+    refresh_frac: 0.05
+    init_from: data
+  mh_steps: 5
+  grad_clip: 5.0
+
+sampling:
+  beta_schedule:
+    type: linear
+    beta0: 0.5
+    beta_T: 5.0
+    steps: 200
+  parallel_tempering:
+    n_chains: 4
+    swap_every: 20
+  langevin:
+    step_size: 0.005
+  proposals:
+    add_prob: 0.4
+    swap_prob: 0.4
+    delete_prob: 0.2
+
+evaluation:
+  litpcba:
+    targets: all
+    n_per_target: 1000
+    docking: vina
+    pose_rerank: diffdock
+  strain:
+    minimizer: openmm_mmff94
+    sample_size: 500

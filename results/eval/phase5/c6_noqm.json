@@ -1,0 +1,17 @@
+{
+  "trained": {
+    "n": 2000,
+    "energy_mae_kcal_per_mol": 122.98179626464844,
+    "energy_rmse_kcal_per_mol": 194.15893336710005,
+    "energy_spearman": 0.994935604233901
+  },
+  "random_init": {
+    "n": 2000,
+    "energy_mae_kcal_per_mol": 28149.435546875,
+    "energy_rmse_kcal_per_mol": 31323.988507212805,
+    "energy_spearman": -0.9418707509676877
+  },
+  "spearman_drop": 1.9368063552015888,
+  "mae_gap_kcal": 28026.45375061035,
+  "c6_c1_collapse_confirmed": true
+}

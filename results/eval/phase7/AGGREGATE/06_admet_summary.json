@@ -1,0 +1,71 @@
+{
+  "task_id": "06_admet",
+  "completed_utc": "2026-04-25T10:33:53Z",
+  "thresholds": {
+    "tf_lipinski": {
+      "target": ">= 0.80",
+      "observed": 0.8445092626671574,
+      "pass": true
+    },
+    "tf_veber": {
+      "target": ">= 0.80",
+      "observed": 0.929026159026159,
+      "pass": true
+    },
+    "tf_pains": {
+      "target": ">= 0.90",
+      "observed": 0.9515047915047915,
+      "pass": true
+    },
+    "tf_vs_targetdiff_lipinski": {
+      "target": ">= TargetDiff (parity)",
+      "observed": 0.23117592933382414,
+      "pass": true
+    },
+    "tf_vs_targetdiff_veber": {
+      "target": ">= TargetDiff (parity)",
+      "observed": 0.0845817145817146,
+      "pass": true
+    },
+    "tf_vs_targetdiff_pains": {
+      "target": ">= TargetDiff (parity)",
+      "observed": -0.03516187516187519,
+      "pass": false
+    }
+  },
+  "per_generator_macro_mean": {
+    "thermofrag": {
+      "lipinski_pass": 0.8445092626671574,
+      "veber_pass": 0.929026159026159,
+      "pains_pass": 0.9515047915047915,
+      "ghose_pass": 0.8343240774819721,
+      "egan_pass": 0.8304396870186344
+    },
+    "targetdiff": {
+      "lipinski_pass": 0.6133333333333333,
+      "veber_pass": 0.8444444444444444,
+      "pains_pass": 0.9866666666666667,
+      "ghose_pass": 0.6355555555555555,
+      "egan_pass": 0.7088888888888889
+    },
+    "rxnflow": {
+      "lipinski_pass": 0.9422222222222222,
+      "veber_pass": 1.0,
+      "pains_pass": 0.8977777777777778,
+      "ghose_pass": 0.9555555555555556,
+      "egan_pass": 0.9933333333333334
+    },
+    "bbar": {
+      "lipinski_pass": 0.8422222222222222,
+      "veber_pass": 0.9666666666666667,
+      "pains_pass": 0.9533333333333334,
+      "ghose_pass": 0.7200000000000001,
+      "egan_pass": 0.9266666666666666
+    }
+  },
+  "thresholds_target": {
+    "lipinski": 0.8,
+    "veber": 0.8,
+    "pains": 0.9
+  }
+}

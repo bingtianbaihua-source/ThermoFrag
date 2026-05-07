@@ -1,0 +1,16 @@
+{
+  "pdb": "5L2O",
+  "center": [
+    6.17,
+    -15.02,
+    -34.19
+  ],
+  "size": [
+    22.5,
+    22.5,
+    22.5
+  ],
+  "cognate_resname": "6ZW",
+  "cognate_n_atoms": 17,
+  "source": "cognate"
+}

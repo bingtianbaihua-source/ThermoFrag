@@ -1,0 +1,16 @@
+target,pdb,status,source,cognate,cognate_n_atoms,center_x,center_y,center_z,size_x,size_y,size_z
+ADRB2,4LDL,ok,cognate,XQC,23,-3.31,-13.11,-50.88,22.5,22.5,22.5
+ALDH1,5L2O,ok,cognate,6ZW,17,6.17,-15.02,-34.19,22.5,22.5,22.5
+ESR_ago,2P15,ok,cognate,EZT,32,-35.14,5.05,20.79,22.5,22.5,22.5
+ESR_antago,2IOK,ok,cognate,IOK,30,17.74,35.38,52.68,22.5,22.5,22.5
+FEN1,5FV7,ok,cognate,R3Z,23,-17.47,-4.99,0.96,22.5,22.5,22.5
+GBA,2V3E,ok,cognate,NND,20,35.71,31.45,-2.33,22.5,22.5,22.5
+IDH1,4UMX,ok,cognate,NAP,48,-3.59,23.75,92.14,22.5,24.3,22.5
+KAT2A,5MLJ,ok,cognate,9ST,23,-16.07,-5.96,13.51,22.5,22.5,22.5
+MAPK1,4FV6,ok,cognate,E57,57,8.01,-3.6,-15.49,27.01,22.5,22.5
+MTORC1,4DRI,ok,cognate,RAP,65,35.51,49.95,36.03,23.97,23.68,22.5
+OPRK1,6B73,ok,cognate,CVV,33,60.38,-24.65,-5.0,22.5,22.5,22.5
+PKM2,3GR4,ok,cognate,DYY,60,10.02,2.98,13.64,26.06,22.5,22.5
+PPARG,3B1M,ok,cognate,KRC,38,11.91,48.64,61.12,22.5,22.5,22.5
+TP53,4HG7,ok,cognate,NUT,40,-23.83,7.53,-14.05,22.5,22.54,22.5
+VDR,3A2J,ok,cognate,TEJ,31,11.47,-3.64,-32.13,22.5,22.5,22.5

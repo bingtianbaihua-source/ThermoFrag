@@ -1,0 +1,8 @@
+{
+  "n": 2000,
+  "energy_mae_kcal_per_mol": 826.783447265625,
+  "energy_rmse_kcal_per_mol": 1045.6394574613182,
+  "energy_spearman": 0.8871827247956812,
+  "energy_pearson": 0.8817110265632092,
+  "energy_mae_per_atom_kcal": 68.24314788877086
+}

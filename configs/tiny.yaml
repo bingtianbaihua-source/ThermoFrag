@@ -1,0 +1,30 @@
+# Tiny config for sanity tests on a laptop or quick CI runs.
+# Trainer should run end-to-end in under 5 minutes on a 4060.
+
+defaults: default
+run:
+  name: thermofrag_tiny
+
+model:
+  qm:
+    hidden: 64
+    num_layers: 2
+  coupling:
+    hidden: 64
+    num_layers: 2
+  external_field:
+    hidden: 64
+
+training:
+  batch_size: 8
+  epochs: 1
+  log_every: 5
+  ckpt_every: 100
+  pcd:
+    buffer_size: 256
+
+sampling:
+  beta_schedule:
+    steps: 20
+  parallel_tempering:
+    n_chains: 2

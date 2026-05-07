@@ -1,0 +1,18 @@
+{
+  "n_samples": 2000,
+  "n_ref_used": 5000,
+  "accept_rate": 0.07724,
+  "mh_steps": 50,
+  "kl_fragment_marginal": 1.2333770531811985,
+  "kl_logp_gen_to_ref": 0.33864290318874546,
+  "kl_qed_gen_to_ref": 0.028699072187872786,
+  "kl_mw_gen_to_ref": 0.7739122611042742,
+  "kl_tpsa_gen_to_ref": 0.2817634892836812,
+  "exit_criterion_primary_three": {
+    "logp": 0.33864290318874546,
+    "qed": 0.028699072187872786,
+    "mw": 0.7739122611042742,
+    "all_below_0.05": false
+  },
+  "note": "Properties are aggregated over fragment core SMILES (sum of logP/MW/TPSA; mean QED). This is a proxy for molecular-level properties; full assembly requires Phase-3 proposal kernels."
+}

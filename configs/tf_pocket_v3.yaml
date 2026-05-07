@@ -1,0 +1,61 @@
+# TF-pocket v3: EGNN-over-Cα pocket encoder trained jointly with μ(y, p).
+#
+# Departs from v1/v2 only in the pocket branch: v1/v2 use a frozen ESM-2
+# mean-pooled residue embedding (1280-d, loaded from a .npy); v3 trains a
+# small EGNN from raw Cα geometry (.npz under pocket_geom/...) end-to-end
+# with the pocket-conditional μ head. QM + coupling stay frozen.
+#
+# The sampler-side contract is unchanged: after training we run the EGNN
+# once on each LIT-PCBA pocket's geometry, dump the output as
+# <target>.npy, and reuse scripts/sample.py with --pocket-ckpt and
+# --pocket-embed pointing at the v3 checkpoint + dumped .npy.
+
+run:
+  name: thermofrag_tf_pocket_v3
+  seed: 42
+  device: cuda
+  precision: fp32
+  out_dir: results
+
+data:
+  conditional: data/processed/crossdocked_conditional.lmdb
+  pocket_geom: data/processed/pocket_geom/crossdocked
+
+model:
+  external_field:
+    properties: [logP, qed, sa, tpsa, mw, hba, hbd, rotb]
+    hidden: 256
+    pocket_dim: 128              # matches pocket_encoder.embed_dim below
+    laplace_last_layer: true
+  pocket_encoder:
+    type: egnn
+    embed_dim: 128               # == external_field.pocket_dim
+    n_layers: 3
+    n_rbf: 16
+    cutoff_a: 10.0
+
+training:
+  phase: tf_pocket_v3_mu
+  batch_size: 64
+  num_workers: 0
+  optimizer: adamw
+  lr: 5.0e-4
+  weight_decay: 1.0e-5
+  epochs: 20
+  log_every: 50
+  ckpt_every: 500
+  eval_every: 500
+  max_steps_hint: 15000
+  loss_weights:
+    mu: 1.0
+    contrast: 0.5
+  mu_beta: 1.0
+  mu_y_noise: 0.3
+  grad_clip: 5.0
+
+evaluation:
+  # At sampler time we dump per-target .npy under this directory by
+  # running the trained EGNN on data/processed/pocket_geom/litpcba/*.npz
+  # via scripts/dump_pocket_v3_litpcba.py.
+  pocket_embeds: data/processed/pocket_embeds/litpcba_v3
+  pocket_geom: data/processed/pocket_geom/litpcba

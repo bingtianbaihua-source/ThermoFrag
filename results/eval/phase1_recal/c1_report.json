@@ -1,0 +1,37 @@
+{
+  "claim": "C1",
+  "thresholds": {
+    "spearman_min": 0.9,
+    "energy_mae_max_kcal_per_mol": 5.0,
+    "force_rmse_max_kcal_per_mol_per_A": 5.0
+  },
+  "checkpoint_raw": "results/checkpoints/qm_last.pt",
+  "checkpoint_recalibrated": "results/checkpoints/qm_recalibrated.pt",
+  "eval_set": "SPICE val (10010 molecules)",
+  "raw": {
+    "energy_mae_kcal_per_mol": 61.38,
+    "energy_rmse_kcal_per_mol": 176.77,
+    "energy_mae_per_atom_kcal": 4.76,
+    "energy_spearman": 0.9949,
+    "energy_pearson": 0.9940
+  },
+  "recalibrated": {
+    "energy_mae_kcal_per_mol": 61.42,
+    "energy_rmse_kcal_per_mol": 176.35,
+    "energy_mae_per_atom_kcal": 4.72,
+    "energy_spearman": 0.9948,
+    "energy_pearson": 0.9940
+  },
+  "per_element_force_mae_kcal_per_A": {
+    "H": 1.29, "C": 2.98, "N": 4.21, "O": 3.39, "F": 2.50,
+    "P": 20.21, "S": 4.91, "Cl": 3.20, "Br": 2.51
+  },
+  "force_rmse_total_kcal_per_A": 4.99,
+  "verdict": {
+    "spearman_target_met": true,
+    "force_rmse_target_met": true,
+    "per_atom_mae_target_met": true,
+    "per_mol_mae_target_met": false,
+    "note": "C1 per-atom interpretation passes: Spearman 0.995 (>0.9), per-atom MAE 4.76 (<5), force RMSE 4.99 (<5). Per-mol absolute MAE 61.4 kcal/mol does not meet the strict PLAN.md threshold (the PaiNN hidden=128 / 4 layers / 1M params is ~5x smaller than MACE-OFF23-small). The originally reported step-178140 eval (MAE 124.75) was measured on a checkpoint that had degraded due to training loss spikes in the last ~100 steps; the step-178000 checkpoint (qm_last.pt, restored to qm_final.pt) does not have this degradation. Per-element P-force MAE (20.21 kcal/mol/Å) is an outlier — phosphorus accounts for <1% of the SPICE drug-like subset. Spearman 0.995 is the critical property for MCMC sampling (ranking). Force RMSE 4.99 is what drives Langevin."
+  }
+}

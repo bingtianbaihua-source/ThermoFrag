@@ -1,0 +1,99 @@
+# Phase 1 large-model QM pretrain. Bigger PaiNN (hidden=256, layers=6) intended to
+# close the C1 MAE gap. Same SPICE data / schedule as the hidden=128 run but ~4x
+# more parameters. Expected wall-clock ~2–3h on a 4060.
+
+run:
+  name: thermofrag_phase1_large
+  seed: 42
+  device: cuda
+  precision: bf16
+  out_dir: results
+  # Namespace checkpoints so this run does NOT overwrite the canonical
+  # qm_last/qm_best/qm_final.pt from the hidden=128 run.
+  ckpt_suffix: large
+
+data:
+  fragment_library: data/processed/fragment_library.parquet
+  qm_train: data/processed/spice
+  qm_test: data/processed/qmugs
+  unconditional: data/processed/zinc_unconditional.lmdb
+  conditional: data/processed/chembl_conditional.lmdb
+  litpcba_root: data/processed/litpcba
+
+model:
+  qm:
+    backbone: painn
+    hidden: 256
+    num_layers: 6
+    cutoff: 5.0
+    n_radial: 24
+    elements: [H, C, N, O, F, P, S, Cl, Br]
+    warm_start: null
+  coupling:
+    backbone: gine
+    hidden: 256
+    num_layers: 4
+    pool: set2set
+    n_fragments: null
+    n_bond_types: 8
+    mh_beta: 1.0
+    warm_start: null
+  external_field:
+    properties: [logP, qed, sa, tpsa, mw, hba, hbd, rotb]
+    hidden: 256
+    laplace_last_layer: true
+
+training:
+  phase: pretrain_qm
+  batch_size: 24           # smaller batch to fit the wider model on 4060
+  num_workers: 4
+  grad_accum: 1
+  max_atoms: 50
+  optimizer: adamw
+  lr: 2.0e-4
+  weight_decay: 1.0e-5
+  epochs: 30
+  log_every: 50
+  ckpt_every: 1000
+  # Periodic val eval + best-ckpt selection inside the loop (bug fix).
+  # 4000 steps ≈ every ~25 min at ~160 samples/s on 4060 with bs=24.
+  eval_every: 4000
+  loss_weights:
+    qm_energy: 1.0
+    qm_force: 0.5
+    couple: 0.1
+    mu: 0.1
+    detailed_balance: 0.01
+    vocab: 0.0
+  pcd:
+    buffer_size: 4096
+    refresh_frac: 0.05
+    init_from: data
+  mh_steps: 5
+  grad_clip: 5.0
+
+sampling:
+  beta_schedule:
+    type: linear
+    beta0: 0.5
+    beta_T: 5.0
+    steps: 200
+  parallel_tempering:
+    n_chains: 4
+    swap_every: 20
+  langevin:
+    step_size: 0.005
+  proposals:
+    add_prob: 0.4
+    swap_prob: 0.4
+    delete_prob: 0.2
+
+evaluation:
+  litpcba:
+    targets: all
+    n_per_target: 1000
+    docking: vina
+    pose_rerank: diffdock
+  strain:
+    minimizer: openmm_mmff94
+    sample_size: 500

@@ -1,0 +1,18 @@
+{
+  "generator": "thermofrag",
+  "target": "TP53",
+  "chain_idx": 703,
+  "status": "equilibration_nan",
+  "note": "warm 0.5fs/10K: OpenMMException: Particle coordinate is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently-Asked-Questions#nan",
+  "n_atoms": 15149,
+  "n_water": 4513,
+  "duration_ns": 10.0,
+  "wall_seconds_equil": 0.0,
+  "wall_seconds_prod": 0.0,
+  "rmsd_mean": null,
+  "rmsd_std": null,
+  "rmsd_max": null,
+  "frac_below_3A": null,
+  "n_persistent_contacts": null,
+  "contact_persistence": null
+}

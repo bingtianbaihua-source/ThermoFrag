@@ -1,0 +1,16 @@
+{
+  "pdb": "3B1M",
+  "center": [
+    11.91,
+    48.64,
+    61.12
+  ],
+  "size": [
+    22.5,
+    22.5,
+    22.5
+  ],
+  "cognate_resname": "KRC",
+  "cognate_n_atoms": 38,
+  "source": "cognate"
+}

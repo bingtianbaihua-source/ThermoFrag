@@ -1,0 +1,68 @@
+{
+  "n_val": 10010,
+  "large_aggregate": {
+    "spearman": 0.9951956290746016,
+    "mae_kcal": 55.8694254872325
+  },
+  "strata": [
+    {
+      "thresh": 0,
+      "n": 10010,
+      "small_per_atom_mae": 4.720873632442123,
+      "small_per_mol_mae": 61.42469543700928,
+      "large_per_atom_mae": 5.598204402804321,
+      "large_per_mol_mae": 55.8694254872325
+    },
+    {
+      "thresh": 15,
+      "n": 8880,
+      "small_per_atom_mae": 1.592626467462912,
+      "small_per_mol_mae": 41.00983965074694,
+      "large_per_atom_mae": 1.2750538470110238,
+      "large_per_mol_mae": 30.661452917150548
+    },
+    {
+      "thresh": 20,
+      "n": 7848,
+      "small_per_atom_mae": 1.0292581682073974,
+      "small_per_mol_mae": 33.315386150955064,
+      "large_per_atom_mae": 0.7968265422238203,
+      "large_per_mol_mae": 23.868605556351937
+    },
+    {
+      "thresh": 25,
+      "n": 6904,
+      "small_per_atom_mae": 0.7655525153209075,
+      "small_per_mol_mae": 29.445839219960803,
+      "large_per_atom_mae": 0.5254676250418537,
+      "large_per_mol_mae": 19.149412966271818
+    },
+    {
+      "thresh": 30,
+      "n": 6133,
+      "small_per_atom_mae": 0.7345339453031167,
+      "small_per_mol_mae": 29.736217220747392,
+      "large_per_atom_mae": 0.49068258196835796,
+      "large_per_mol_mae": 18.893232643205813
+    },
+    {
+      "thresh": 40,
+      "n": 3861,
+      "small_per_atom_mae": 0.6400318826436066,
+      "small_per_mol_mae": 29.6308504592196,
+      "large_per_atom_mae": 0.3420400576408289,
+      "large_per_mol_mae": 15.640430370410838
+    }
+  ],
+  "per_element_force_mae_kcal_per_A": {
+    "H": 1.1134284734725952,
+    "C": 2.5067999362945557,
+    "N": 3.4527711868286133,
+    "O": 2.9325168132781982,
+    "F": 2.244140625,
+    "P": 12.249852180480957,
+    "S": 3.822977304458618,
+    "Cl": 2.654963970184326,
+    "Br": 1.806825876235962
+  }
+}

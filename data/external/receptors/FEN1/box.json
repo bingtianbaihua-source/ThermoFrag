@@ -1,0 +1,16 @@
+{
+  "pdb": "5FV7",
+  "center": [
+    -17.47,
+    -4.99,
+    0.96
+  ],
+  "size": [
+    22.5,
+    22.5,
+    22.5
+  ],
+  "cognate_resname": "R3Z",
+  "cognate_n_atoms": 23,
+  "source": "cognate"
+}

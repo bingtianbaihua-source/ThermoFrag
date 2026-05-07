@@ -1,0 +1,16 @@
+{
+  "pdb": "4FV6",
+  "center": [
+    8.01,
+    -3.6,
+    -15.49
+  ],
+  "size": [
+    27.01,
+    22.5,
+    22.5
+  ],
+  "cognate_resname": "E57",
+  "cognate_n_atoms": 57,
+  "source": "cognate"
+}

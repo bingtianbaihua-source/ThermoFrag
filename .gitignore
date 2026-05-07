@@ -1,0 +1,53 @@
+data/raw/
+data/processed/
+results/checkpoints/
+results/logs/
+results/figures/**/*.png
+!results/figures/.keep
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+.idea/
+.vscode/
+*.egg-info/
+*.lmdb
+*.npz
+!data/processed/.keep
+
+# Large vendor artefacts (regenerable; document in MIGRATION.md)
+vendor/_cached_weights/pmnet/pmnet.tar
+vendor/rxnflow/data/envs/zincfrag/bb_fp_*.npy
+vendor/rxnflow/data/envs/zincfrag/bb_mask.npy
+
+# Nested upstream .git dirs — ship vendor/<upstream>/ as snapshot, not submodule
+vendor/bbar_upstream/.git/
+vendor/pharmaconet/.git/
+vendor/rxnflow/.git/
+vendor/targetdiff/.git/
+
+# Transient rendered files
+vendor/rxnflow/environment.rendered.yml
+
+# OS / editor
+.DS_Store
+*.swp
+
+# Claude Code local state (skills vendored from K-Dense-AI/scientific-agent-skills, etc.)
+.claude/skills/
+
+# Logs outside results/logs/
+*.log
+*.log.*
+wandb/
+
+.claude
+.serena
+adv*
+figures_workshop*
+Springer_Nature_LaTeX_Template
+submission
+*.pdf
+*.md
+.codex
+results/figures

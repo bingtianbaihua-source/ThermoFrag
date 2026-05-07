@@ -1,0 +1,110 @@
+{
+  "task_id": "02_multi_scoring",
+  "completed_utc": "2026-04-25T14:54:01Z",
+  "n_rows": 1800,
+  "n_ok": 1800,
+  "smina_per_target": {
+    "ADRB2": {
+      "tf_top10_mean": -11.716995999999998,
+      "td_top10_mean": -9.938558000000002,
+      "wilcoxon_p": 0.001953125,
+      "tf_wins": true
+    },
+    "ALDH1": {
+      "tf_top10_mean": -8.903235,
+      "td_top10_mean": -7.443802,
+      "wilcoxon_p": 0.001953125,
+      "tf_wins": true
+    },
+    "ESR_ago": {
+      "tf_top10_mean": -9.885959999999999,
+      "td_top10_mean": -10.007377,
+      "wilcoxon_p": 0.130859375,
+      "tf_wins": false
+    },
+    "ESR_antago": {
+      "tf_top10_mean": -9.750366,
+      "td_top10_mean": -9.267688999999999,
+      "wilcoxon_p": 0.001953125,
+      "tf_wins": true
+    },
+    "FEN1": {
+      "tf_top10_mean": -6.5930990000000005,
+      "td_top10_mean": -6.601457000000001,
+      "wilcoxon_p": 0.921875,
+      "tf_wins": false
+    },
+    "GBA": {
+      "tf_top10_mean": -9.560126,
+      "td_top10_mean": -9.523202999999999,
+      "wilcoxon_p": 0.16015625,
+      "tf_wins": false
+    },
+    "IDH1": {
+      "tf_top10_mean": -8.897993000000001,
+      "td_top10_mean": -8.791447,
+      "wilcoxon_p": 0.275390625,
+      "tf_wins": false
+    },
+    "KAT2A": {
+      "tf_top10_mean": -9.338214,
+      "td_top10_mean": -6.967966,
+      "wilcoxon_p": 0.001953125,
+      "tf_wins": true
+    },
+    "MAPK1": {
+      "tf_top10_mean": -8.971556,
+      "td_top10_mean": -8.261936,
+      "wilcoxon_p": 0.001953125,
+      "tf_wins": true
+    },
+    "MTORC1": {
+      "tf_top10_mean": -11.37486,
+      "td_top10_mean": -11.629913000000002,
+      "wilcoxon_p": 0.009765625,
+      "tf_wins": false
+    },
+    "OPRK1": {
+      "tf_top10_mean": -10.438312,
+      "td_top10_mean": -10.164406999999999,
+      "wilcoxon_p": 1.0,
+      "tf_wins": false
+    },
+    "PKM2": {
+      "tf_top10_mean": -12.570376,
+      "td_top10_mean": -12.272431000000003,
+      "wilcoxon_p": 0.10546875,
+      "tf_wins": false
+    },
+    "PPARG": {
+      "tf_top10_mean": -8.396265,
+      "td_top10_mean": -8.50092,
+      "wilcoxon_p": 0.130859375,
+      "tf_wins": false
+    },
+    "TP53": {
+      "tf_top10_mean": -8.774617000000001,
+      "td_top10_mean": -8.62765,
+      "wilcoxon_p": 0.064453125,
+      "tf_wins": false
+    },
+    "VDR": {
+      "tf_top10_mean": -10.492753,
+      "td_top10_mean": -11.86516,
+      "wilcoxon_p": 0.001953125,
+      "tf_wins": false
+    }
+  },
+  "thresholds": {
+    "spearman_smina_vina": {
+      "target": ">= 0.7",
+      "observed": 0.753,
+      "pass": true
+    },
+    "tf_vs_td_smina": {
+      "target": ">= 10/15 sig wins",
+      "observed": "5/15",
+      "pass": false
+    }
+  }
+}

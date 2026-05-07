@@ -1,0 +1,16 @@
+{
+  "pdb": "5MLJ",
+  "center": [
+    -16.07,
+    -5.96,
+    13.51
+  ],
+  "size": [
+    22.5,
+    22.5,
+    22.5
+  ],
+  "cognate_resname": "9ST",
+  "cognate_n_atoms": 23,
+  "source": "cognate"
+}

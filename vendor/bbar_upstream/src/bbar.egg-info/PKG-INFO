@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: bbar
+Version: 2.0.2
+Summary: PharmacoNet: Molecular generative model via retrosynthetically prepared chemical building block assembly
+Author-email: Seonghwan Seo <shwan0106@kaist.ac.kr>
+License: MIT
+Project-URL: Website, https://github.com/SeonghwanSeo/BBAR
+Project-URL: Source Code, https://github.com/SeonghwanSeo/BBAR
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+Requires-Dist: numpy==1.26.4
+Requires-Dist: torch==2.3.1
+Requires-Dist: torch-geometric==2.4.0
+Requires-Dist: torch-scatter==2.1.2
+Requires-Dist: torch-sparse==0.6.18
+Requires-Dist: torch-cluster==1.6.3
+Requires-Dist: rdkit
+Requires-Dist: tensorboard
+Requires-Dist: omegaconf>=2.3
+Requires-Dist: parmap
+Requires-Dist: pandas
+Requires-Dist: gdown

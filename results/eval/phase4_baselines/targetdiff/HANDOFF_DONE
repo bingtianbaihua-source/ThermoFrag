@@ -1,0 +1,8 @@
+2026-04-22T02:15:00+00:00 targetdiff
+n_keep=100 num_steps=1000 batch_size=100
+15/15 targets sampled (3090, py3.10 + torch 2.3.0+cu121 + PyG 2.5.3)
+recon: 195-200/200 per target (ligand completeness ≥97.5%)
+Vina n_ok range: 43-100 per target
+Strain: OpenMM + SMIRNOFF openff-2.1.0 Sage, 100-step L-BFGS
+Vina top-10 vs TF: TF sig-wins 14/15 (paired Wilcoxon p<0.01), mean gap -0.94 kcal/mol
+See results/eval/phase5/c3_vs_generators.csv + c3_c4_summary.json

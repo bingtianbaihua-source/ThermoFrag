@@ -1,0 +1,42 @@
+name: rxnflow
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip>=24.0
+  - git
+  - pip:
+      # PyTorch CUDA 12.4 GPU wheel (NOT the CPU wheel)
+      - --extra-index-url https://download.pytorch.org/whl/cu124
+      - torch==2.5.1+cu124
+
+      # PyG ecosystem pre-built against torch 2.5.1 + cu124
+      - --find-links https://data.pyg.org/whl/torch-2.5.1+cu124.html
+      - torch-geometric>=2.4.0
+      - torch-scatter>=2.1.2
+      - torch-sparse>=0.6.18
+      - torch-cluster>=1.6.3
+
+      # RxnFlow pyproject hard pins
+      - numpy==1.26.4
+      - rdkit>=2023.9.6
+      - omegaconf>=2.3
+      - botorch
+      - wandb
+      - tensorboard
+      - gitpython
+
+      # Weight auto-download helper + misc
+      - gdown
+      - scipy
+      - pandas
+      - pyarrow
+
+      # PharmacoNet proxy (provides pmnet_appl used by RxnFlow's ProxySampler).
+      # Pre-cloned to vendor/pharmaconet to avoid DNS/transient github failures.
+      # NOTE: `-e` paths below are templated by scripts/setup_new_machine.sh
+      # — it rewrites {{PROJECT_ROOT}} to the real path on the target machine.
+      - -e {{PROJECT_ROOT}}/vendor/pharmaconet
+
+      # RxnFlow itself — editable install from this checkout (templated path).
+      - -e {{PROJECT_ROOT}}/vendor/rxnflow

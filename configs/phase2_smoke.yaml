@@ -1,0 +1,29 @@
+# Phase 2 smoke config: few hundred PCD steps on a subsampled ZINC pool to
+# verify MH acceptance, energy regularization, and checkpointing. On a 4060
+# this should finish in under 2 minutes with pool_size=4096.
+
+defaults: default
+
+run:
+  name: thermofrag_phase2_smoke
+
+training:
+  phase: pretrain_coupling
+  batch_size: 32
+  epochs: 1
+  log_every: 10
+  ckpt_every: 100
+  mh_steps: 5
+  grad_clip: 5.0
+  loss_weights:
+    couple_l2: 1.0e-3
+  pcd:
+    buffer_size: 512
+    refresh_frac: 0.05
+    init_from: data
+
+model:
+  coupling:
+    hidden: 128
+    num_layers: 3
+    mh_beta: 1.0

@@ -1,0 +1,16 @@
+{
+  "pdb": "2V3E",
+  "center": [
+    35.71,
+    31.45,
+    -2.33
+  ],
+  "size": [
+    22.5,
+    22.5,
+    22.5
+  ],
+  "cognate_resname": "NND",
+  "cognate_n_atoms": 20,
+  "source": "cognate"
+}

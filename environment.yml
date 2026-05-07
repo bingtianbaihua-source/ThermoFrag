@@ -1,0 +1,32 @@
+name: thermofrag
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pytorch=2.3
+  - pytorch-cuda=12.1
+  - rdkit=2023.09
+  - numpy
+  - scipy
+  - pandas
+  - pyyaml
+  - tqdm
+  - lmdb
+  - h5py
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - jupyterlab
+  - pip:
+      - torch-geometric>=2.5
+      - --find-links https://data.pyg.org/whl/torch-2.3.0+cu121.html
+      - torch-scatter
+      - torch-cluster
+      - ase>=3.22
+      - schnetpack>=2.0
+      - openff-toolkit>=0.16
+      - -e .

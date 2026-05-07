@@ -1,0 +1,18 @@
+{
+  "chain_idx": 588,
+  "smiles": "Cn1c(C[SH](CC(N)=O)Cc2cc(=O)oc3cc4oc5c(c4cc23)CCCC5)c(C2NC(=O)c3ccccc32)c2ccccc21",
+  "vina_score": -9.708,
+  "vina_pose_score": -9.711,
+  "formal_charge": 0,
+  "charge_method": "bcc",
+  "mm_gbsa_total": -50.9187,
+  "mm_gbsa_vdw": -56.9657,
+  "mm_gbsa_eel": -7.4371,
+  "mm_gbsa_egb": 19.2554,
+  "mm_gbsa_esurf": -5.7713,
+  "mm_gbsa_gas": -64.4028,
+  "mm_gbsa_solv": 13.4841,
+  "status": "ok",
+  "note": "",
+  "runtime_s": 1053.4927668571472
+}

@@ -1,0 +1,23 @@
+{
+  "task_id": "01_mm_gbsa",
+  "git_sha": "4a62d0f4cb824b3f227017732cdecd7eea44c0bd",
+  "args": {
+    "generators": [
+      "thermofrag",
+      "targetdiff"
+    ],
+    "targets": [
+      "PKM2"
+    ],
+    "top_k": 10,
+    "n_workers": 1,
+    "out_root": "results/eval/phase7/mm_gbsa",
+    "seed": 42,
+    "dry_run": false,
+    "verbose": false
+  },
+  "conda_env": "base",
+  "n_jobs_total": 2,
+  "n_ok": 2,
+  "n_fail": 0
+}

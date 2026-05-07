@@ -1,0 +1,268 @@
+{
+  "task_id": "01_mm_gbsa",
+  "completed_utc": "2026-04-25T21:43:13Z",
+  "thresholds": {
+    "spearman_vs_vina": {
+      "target": ">= 0.5",
+      "observed": 0.4764067948784496,
+      "p": 2.5398592726015334e-35,
+      "pass": false
+    },
+    "tf_vs_targetdiff_sig_wins": {
+      "target": ">= 10/15 sig wins (p<0.05)",
+      "observed": "2/15",
+      "sig_targets": [
+        "FEN1",
+        "KAT2A"
+      ],
+      "pass": false
+    },
+    "max_failure_rate": {
+      "target": "< 0.30",
+      "observed": 0.0,
+      "pass": true
+    }
+  },
+  "per_generator": {
+    "thermofrag": {
+      "n_ok": 150,
+      "mm_gbsa_mean": -32.865978000000005,
+      "mm_gbsa_median": -33.7335,
+      "vina_mean": -10.57068
+    },
+    "targetdiff": {
+      "n_ok": 150,
+      "mm_gbsa_mean": -34.31913266666666,
+      "mm_gbsa_median": -35.3137,
+      "vina_mean": -9.630360000000001
+    },
+    "rxnflow": {
+      "n_ok": 150,
+      "mm_gbsa_mean": -39.216126,
+      "mm_gbsa_median": -40.815250000000006,
+      "vina_mean": -11.626433333333333
+    },
+    "bbar": {
+      "n_ok": 150,
+      "mm_gbsa_mean": -32.784914666666666,
+      "mm_gbsa_median": -33.177949999999996,
+      "vina_mean": -10.905100000000001
+    }
+  },
+  "per_target": {
+    "ADRB2": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -38.96842,
+      "td_mean": -33.07132,
+      "tf_median": -37.0096,
+      "td_median": -33.0954,
+      "delta_mean": -5.897100000000002,
+      "delta_median": -3.914200000000001,
+      "mannwhitney_u": 28.0,
+      "mannwhitney_p": 0.10410988966022681,
+      "tf_better": true,
+      "tf_sig_better": false
+    },
+    "ALDH1": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -34.73323,
+      "td_mean": -29.90544,
+      "tf_median": -37.7534,
+      "td_median": -28.22025,
+      "delta_mean": -4.82779,
+      "delta_median": -9.53315,
+      "mannwhitney_u": 31.0,
+      "mannwhitney_p": 0.16197241048012612,
+      "tf_better": true,
+      "tf_sig_better": false
+    },
+    "ESR_ago": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -42.094350000000006,
+      "td_mean": -50.22453,
+      "tf_median": -39.02515,
+      "td_median": -48.91975,
+      "delta_mean": 8.130179999999996,
+      "delta_median": 9.894600000000004,
+      "mannwhitney_u": 77.0,
+      "mannwhitney_p": 0.04515456962427901,
+      "tf_better": false,
+      "tf_sig_better": false
+    },
+    "ESR_antago": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -33.159259999999996,
+      "td_mean": -43.50528,
+      "tf_median": -34.5785,
+      "td_median": -40.14085,
+      "delta_mean": 10.346020000000003,
+      "delta_median": 5.562350000000002,
+      "mannwhitney_u": 74.0,
+      "mannwhitney_p": 0.07566157214388704,
+      "tf_better": false,
+      "tf_sig_better": false
+    },
+    "FEN1": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -10.54729,
+      "td_mean": -0.5642499999999999,
+      "tf_median": -11.15045,
+      "td_median": 0.42090000000000005,
+      "delta_mean": -9.98304,
+      "delta_median": -11.571349999999999,
+      "mannwhitney_u": 20.0,
+      "mannwhitney_p": 0.025748080821108063,
+      "tf_better": true,
+      "tf_sig_better": true
+    },
+    "GBA": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -31.446749999999998,
+      "td_mean": -24.53827,
+      "tf_median": -28.7723,
+      "td_median": -23.22705,
+      "delta_mean": -6.908479999999997,
+      "delta_median": -5.545250000000003,
+      "mannwhitney_u": 34.0,
+      "mannwhitney_p": 0.24132159301718004,
+      "tf_better": true,
+      "tf_sig_better": false
+    },
+    "IDH1": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -31.47994,
+      "td_mean": -32.33886,
+      "tf_median": -28.14895,
+      "td_median": -29.18305,
+      "delta_mean": 0.8589199999999977,
+      "delta_median": 1.0341000000000022,
+      "mannwhitney_u": 56.0,
+      "mannwhitney_p": 0.6775849579524755,
+      "tf_better": false,
+      "tf_sig_better": false
+    },
+    "KAT2A": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -26.595810000000007,
+      "td_mean": -15.29691,
+      "tf_median": -26.70075,
+      "td_median": -16.99735,
+      "delta_mean": -11.298900000000007,
+      "delta_median": -9.703399999999998,
+      "mannwhitney_u": 10.0,
+      "mannwhitney_p": 0.0028272720911168077,
+      "tf_better": true,
+      "tf_sig_better": true
+    },
+    "MAPK1": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -26.051070000000003,
+      "td_mean": -26.443270000000002,
+      "tf_median": -26.9451,
+      "td_median": -26.742350000000002,
+      "delta_mean": 0.392199999999999,
+      "delta_median": -0.2027499999999982,
+      "mannwhitney_u": 50.0,
+      "mannwhitney_p": 1.0,
+      "tf_better": true,
+      "tf_sig_better": false
+    },
+    "MTORC1": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -43.0487,
+      "td_mean": -44.963710000000006,
+      "tf_median": -40.970150000000004,
+      "td_median": -42.09555,
+      "delta_mean": 1.9150100000000094,
+      "delta_median": 1.125399999999999,
+      "mannwhitney_u": 57.0,
+      "mannwhitney_p": 0.6231762238821174,
+      "tf_better": false,
+      "tf_sig_better": false
+    },
+    "OPRK1": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -24.123569999999997,
+      "td_mean": -38.245870000000004,
+      "tf_median": -25.1176,
+      "td_median": -39.3073,
+      "delta_mean": 14.122300000000006,
+      "delta_median": 14.189699999999998,
+      "mannwhitney_u": 83.0,
+      "mannwhitney_p": 0.014019277113959953,
+      "tf_better": false,
+      "tf_sig_better": false
+    },
+    "PKM2": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -38.239990000000006,
+      "td_mean": -41.61576000000001,
+      "tf_median": -40.5214,
+      "td_median": -41.4322,
+      "delta_mean": 3.375770000000003,
+      "delta_median": 0.9108000000000018,
+      "mannwhitney_u": 59.0,
+      "mannwhitney_p": 0.5205228832757727,
+      "tf_better": false,
+      "tf_sig_better": false
+    },
+    "PPARG": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -40.91760000000001,
+      "td_mean": -34.737159999999996,
+      "tf_median": -45.87115,
+      "td_median": -35.57005,
+      "delta_mean": -6.1804400000000115,
+      "delta_median": -10.301099999999998,
+      "mannwhitney_u": 31.0,
+      "mannwhitney_p": 0.16197241048012612,
+      "tf_better": true,
+      "tf_sig_better": false
+    },
+    "TP53": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -33.186690000000006,
+      "td_mean": -35.684380000000004,
+      "tf_median": -32.5322,
+      "td_median": -35.0133,
+      "delta_mean": 2.4976899999999986,
+      "delta_median": 2.481099999999998,
+      "mannwhitney_u": 64.0,
+      "mannwhitney_p": 0.3074894566186813,
+      "tf_better": false,
+      "tf_sig_better": false
+    },
+    "VDR": {
+      "n_tf": 10,
+      "n_td": 10,
+      "tf_mean": -38.397000000000006,
+      "td_mean": -63.65198,
+      "tf_median": -39.00895,
+      "td_median": -62.38145,
+      "delta_mean": 25.254979999999996,
+      "delta_median": 23.372500000000002,
+      "mannwhitney_u": 93.0,
+      "mannwhitney_p": 0.0013149446697132139,
+      "tf_better": false,
+      "tf_sig_better": false
+    }
+  },
+  "n_total": 600,
+  "n_ok": 600,
+  "n_failed": 0,
+  "notes": "MM-GBSA single-frame on docked Vina poses, igb=5 (OBC2), saltcon=0.150, ff14SB + GAFF2, AM1-BCC charges (Gasteiger fallback). Receptor + ligand minimized 200 cycles with heavy-atom restraints (10 kcal/mol/\u00c5\u00b2) on protein heavy atoms before the single-point. TF-vs-TD significance test is Mann-Whitney U (unpaired across distinct ligand sets) rather than paired Wilcoxon \u2014 paired test inappropriate because TF and TargetDiff produce different molecules. tf_better = TF top-K median MM-GBSA more negative."
+}

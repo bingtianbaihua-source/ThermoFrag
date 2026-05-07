@@ -1,0 +1,67 @@
+{
+  "target_axis": "qed",
+  "target_value": 0.8,
+  "hit_sigma": 0.5,
+  "properties": [
+    "logP",
+    "qed",
+    "sa",
+    "tpsa",
+    "mw",
+    "hba",
+    "hbd",
+    "rotb"
+  ],
+  "rows": [
+    {
+      "beta": 0.1,
+      "accept_rate": 0.91875,
+      "n_samples": 256,
+      "n_valid": 0,
+      "diversity": null,
+      "hit_rate": 0.0,
+      "hit_rate_n": 0,
+      "runtime_s": 11.4159255027771
+    },
+    {
+      "beta": 0.3,
+      "accept_rate": 0.6643880208333334,
+      "n_samples": 256,
+      "n_valid": 2,
+      "diversity": 0.9431818181818182,
+      "hit_rate": 0.0,
+      "hit_rate_n": 2,
+      "runtime_s": 9.826333284378052
+    },
+    {
+      "beta": 1.0,
+      "accept_rate": 0.10748697916666666,
+      "n_samples": 256,
+      "n_valid": 82,
+      "diversity": 0.8748909932780589,
+      "hit_rate": 0.43902439024390244,
+      "hit_rate_n": 82,
+      "runtime_s": 8.316834926605225
+    },
+    {
+      "beta": 3.0,
+      "accept_rate": 0.0294921875,
+      "n_samples": 256,
+      "n_valid": 163,
+      "diversity": 0.8694205647294004,
+      "hit_rate": 0.4171779141104294,
+      "hit_rate_n": 163,
+      "runtime_s": 7.959238529205322
+    },
+    {
+      "beta": 10.0,
+      "accept_rate": 0.018815104166666666,
+      "n_samples": 256,
+      "n_valid": 169,
+      "diversity": 0.8693799891319279,
+      "hit_rate": 0.4260355029585799,
+      "hit_rate_n": 169,
+      "runtime_s": 8.07700514793396
+    }
+  ]
+}

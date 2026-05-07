@@ -1,0 +1,16 @@
+{
+  "n_ref": 4000,
+  "n_pareto": 8,
+  "n_generated": 1451,
+  "n_id": 2000,
+  "n_ood": 2000,
+  "n_properties": 8,
+  "auroc": 0.99603475,
+  "c5_target": 0.8,
+  "pass_c5": true,
+  "var_id_mean": 0.1740800142288208,
+  "var_ood_mean": 1.2030173540115356,
+  "var_ratio_mean": 6.910715103149414,
+  "grid_var_min": 0.007102929055690765,
+  "grid_var_max": 0.8259134888648987
+}

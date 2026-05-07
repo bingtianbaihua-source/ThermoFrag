@@ -1,0 +1,11 @@
+{
+  "n_ref": 4000,
+  "n_pareto": 8,
+  "n_generated": 1451,
+  "gen_qed_median": 0.5103732693507103,
+  "gen_sa_median": 3.295346308556015,
+  "ref_qed_median": 0.7613146305084229,
+  "ref_sa_median": 2.889004945755005,
+  "grid_var_min": 0.007088238839060068,
+  "grid_var_max": 0.8259137272834778
+}

@@ -1,0 +1,16 @@
+{
+  "pdb": "2IOK",
+  "center": [
+    17.74,
+    35.38,
+    52.68
+  ],
+  "size": [
+    22.5,
+    22.5,
+    22.5
+  ],
+  "cognate_resname": "IOK",
+  "cognate_n_atoms": 30,
+  "source": "cognate"
+}

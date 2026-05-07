@@ -1,0 +1,140 @@
+{
+  "baseline": "rxnflow",
+  "model": "qvina-unif-0-64",
+  "checkpoint_path": "./weights/qvina-unif-0-64_20250512.pt",
+  "checkpoint_sha256": "184e5e1e26bad0ff778cca7309c47605dd1c4b0d7bda7ab9b87ae2935d624f85",
+  "env_dir": "/home/chaoxue/code/ThermoFrag/vendor/rxnflow/data/envs/zincfrag",
+  "env_dir_note": "ZINCFrag-200k substituted for the Enamine Catalog that the upstream qvina-unif-0-64 was trained on (Enamine requires commercial request). Documented as controlled deviation for reproducibility.",
+  "sampling": {
+    "temperature": "uniform-16-64",
+    "subsampling_ratio": 0.1,
+    "n_request_per_target": 1200,
+    "n_keep_per_target": 1000,
+    "device": "cuda",
+    "seed": 1
+  },
+  "rxnflow_git_sha": "a39c7aebd45fddfdf72109ffa0f8e4b92f9c4458",
+  "per_target": {
+    "ADRB2": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 0,
+      "n_kept": 1000,
+      "seconds": 13.67
+    },
+    "ALDH1": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 0,
+      "n_kept": 1000,
+      "seconds": 13.9
+    },
+    "ESR_ago": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 1,
+      "n_kept": 1000,
+      "seconds": 13.27
+    },
+    "ESR_antago": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 1,
+      "n_kept": 1000,
+      "seconds": 14.19
+    },
+    "FEN1": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 5,
+      "n_kept": 1000,
+      "seconds": 13.7
+    },
+    "GBA": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 1,
+      "n_kept": 1000,
+      "seconds": 13.51
+    },
+    "IDH1": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 3,
+      "n_kept": 1000,
+      "seconds": 13.45
+    },
+    "KAT2A": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 1,
+      "n_kept": 1000,
+      "seconds": 13.33
+    },
+    "MAPK1": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 1,
+      "n_kept": 1000,
+      "seconds": 13.66
+    },
+    "MTORC1": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 1,
+      "n_kept": 1000,
+      "seconds": 13.11
+    },
+    "OPRK1": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 3,
+      "n_kept": 1000,
+      "seconds": 13.64
+    },
+    "PKM2": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 0,
+      "n_kept": 1000,
+      "seconds": 13.58
+    },
+    "PPARG": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 2,
+      "n_kept": 1000,
+      "seconds": 13.08
+    },
+    "TP53": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 2,
+      "n_kept": 1000,
+      "seconds": 12.98
+    },
+    "VDR": {
+      "n_requested": 1200,
+      "n_returned": 1200,
+      "n_invalid": 0,
+      "n_duplicate": 1,
+      "n_kept": 1000,
+      "seconds": 13.08
+    }
+  },
+  "wall_clock_seconds": 206.32
+}

@@ -1,0 +1,18 @@
+{
+  "generator": "thermofrag",
+  "target": "ESR_ago",
+  "chain_idx": 836,
+  "status": "equilibration_nan",
+  "note": "sander_min: AttributeError: 'NoneType' object has no attribute 'used'\noords = _sander_minimise(modeller, system, workdir,\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/zhao/code/ThermoFrag/scripts/run_md_validation.py\", line 346, in _sander_minimise\n    pmd_struct.save(str(prmtop), overwrite=True)\n  File \"/home/zhao/miniconda3/envs/tf-eval/lib/python3.11/site-packages/parmed/structure.py\", line 1566, in save\n    s = amber.AmberParm.from_structure(self)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/zhao/miniconda3/envs/tf-eval/lib/python3.11/site-packages/parmed/amber/_amberparm.py\", line 331, in from_structure\n    inst.remake_parm()\n  File \"/home/zhao/miniconda3/envs/tf-eval/lib/python3.11/site-packages/parmed/amber/_amberparm.py\", line 655, in remake_parm\n    self._xfer_bond_info()\n  File \"/home/zhao/miniconda3/envs/tf-eval/lib/python3.11/site-packages/parmed/amber/_amberparm.py\", line 1560, in _xfer_bond_info\n    bond.type.used = True\n    ^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'used'\n",
+  "n_atoms": 91833,
+  "n_water": 27785,
+  "duration_ns": 20.0,
+  "wall_seconds_equil": 0.0,
+  "wall_seconds_prod": 0.0,
+  "rmsd_mean": null,
+  "rmsd_std": null,
+  "rmsd_max": null,
+  "frac_below_3A": null,
+  "n_persistent_contacts": null,
+  "contact_persistence": null
+}

@@ -1,0 +1,48 @@
+# TF-pocket variant: pocket-conditional μ head fine-tuned on CrossDocked2020.
+# QM head + CouplingPotential stay at their Phase-3 values (not touched here).
+# Warm-start μ from results/checkpoints/joint_final.pt; only the pocket
+# channels + the trunk's input projection get non-trivial updates at step 0.
+
+run:
+  name: thermofrag_tf_pocket
+  seed: 42
+  device: cuda
+  precision: fp32
+  out_dir: results
+
+data:
+  conditional: data/processed/crossdocked_conditional.lmdb
+  pocket_embeds: data/processed/pocket_embeds/crossdocked
+
+model:
+  external_field:
+    properties: [logP, qed, sa, tpsa, mw, hba, hbd, rotb]
+    hidden: 256
+    pocket_dim: 1280           # esm2_t33_650M_UR50D
+    laplace_last_layer: true
+
+training:
+  phase: tf_pocket_mu
+  batch_size: 64
+  num_workers: 0
+  optimizer: adamw
+  lr: 5.0e-4                   # higher than Phase-3 joint (1e-4) since only μ trains
+  weight_decay: 1.0e-5
+  epochs: 20                   # bounded by max_steps in practice
+  log_every: 50
+  ckpt_every: 500
+  eval_every: 500
+  max_steps_hint: 15000        # informational; CLI --max-steps overrides
+  loss_weights:
+    mu: 1.0
+    contrast: 0.5
+  mu_beta: 1.0
+  mu_y_noise: 0.3
+  grad_clip: 5.0
+
+evaluation:
+  # When running C3/C4 with the TF-pocket sampler, the pocket embedding of
+  # each LIT-PCBA target must be precomputed at data/processed/pocket_embeds/litpcba.
+  # scripts/sample.py will load the matching .npy for the currently-conditioning
+  # target and pass it into μ(y, pocket) at sampler evaluation time.
+  pocket_embeds: data/processed/pocket_embeds/litpcba

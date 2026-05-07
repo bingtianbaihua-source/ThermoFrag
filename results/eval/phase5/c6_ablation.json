@@ -1,0 +1,13 @@
+{
+  "c6_c3_tf_better_than_nomu": {
+    "n_sig": 13,
+    "n_tested": 15,
+    "pass_threshold": "\u226510/15",
+    "pass": true
+  },
+  "c6_c4_tf_lower_strain_than_nomu": {
+    "mean_cohens_d": 0.40642442484750113,
+    "interpretation": "positive = TF higher strain; negative = TF lower",
+    "note": "A positive d means conditional sampler trades strain for property-targeting \u2014 expected for Pareto."
+  }
+}

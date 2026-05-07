@@ -1,0 +1,70 @@
+# Phase 3: conditional joint fine-tune of CouplingPotential + ChemicalPotentialHead.
+# QM head is frozen (not used in this phase per MILESTONES risk register).
+# Uses chembl_conditional.lmdb (built from ZINC + 8-dim phi) as the conditional
+# training set. See docs/METHOD.md eq (3) and docs/MILESTONES.md Phase 3.
+
+run:
+  name: thermofrag_phase3
+  seed: 42
+  device: cuda
+  precision: bf16
+  out_dir: results
+
+data:
+  fragment_library: data/processed/fragment_library.parquet
+  conditional: data/processed/chembl_conditional.lmdb
+
+model:
+  qm:
+    backbone: painn
+    hidden: 128
+    num_layers: 4
+    cutoff: 5.0
+    n_radial: 20
+    elements: [H, C, N, O, F, P, S, Cl, Br]
+    warm_start: null
+  coupling:
+    backbone: gine
+    hidden: 256
+    num_layers: 4
+    pool: set2set
+    n_fragments: null
+    n_bond_types: 8
+    mh_beta: 1.0
+    # Warm-start from the Phase 2 coupling checkpoint so we don't restart V from scratch.
+    warm_start: results/checkpoints/coupling_final.pt
+  external_field:
+    properties: [logP, qed, sa, tpsa, mw, hba, hbd, rotb]
+    hidden: 256
+    laplace_last_layer: true
+
+training:
+  phase: joint_conditional
+  batch_size: 32
+  num_workers: 4
+  grad_accum: 1
+  optimizer: adamw
+  lr: 1.0e-4          # conservative for fine-tune from Phase-2 checkpoint
+  weight_decay: 1.0e-5
+  epochs: 100         # bounded by max_steps in practice
+  log_every: 50
+  ckpt_every: 1000
+  loss_weights:
+    couple: 1.0
+    mu: 0.1
+    couple_l2: 1.0e-3
+  mh_steps: 3
+  mu_beta: 1.0        # inverse temperature inside L_mu target = beta * phi_z
+  mu_y_noise: 0.3     # std of standardized-y Gaussian perturbation per step
+  grad_clip: 5.0
+  pcd:
+    buffer_size: 4096
+    refresh_frac: 0.05
+    init_from: data
+
+sampling:
+  beta_schedule:
+    type: linear
+    beta0: 0.5
+    beta_T: 5.0
+    steps: 200

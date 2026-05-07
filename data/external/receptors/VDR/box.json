@@ -1,0 +1,16 @@
+{
+  "pdb": "3A2J",
+  "center": [
+    11.47,
+    -3.64,
+    -32.13
+  ],
+  "size": [
+    22.5,
+    22.5,
+    22.5
+  ],
+  "cognate_resname": "TEJ",
+  "cognate_n_atoms": 31,
+  "source": "cognate"
+}

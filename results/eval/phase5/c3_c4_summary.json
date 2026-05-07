@@ -1,0 +1,20 @@
+{
+  "rxnflow": {
+    "c3_targets_sig_p<0.01_and_tf_better": 2,
+    "c3_pass_threshold_10_of_15": false,
+    "c4_targets_d<-0.3": 1,
+    "c4_mean_d": 0.16022075520538107
+  },
+  "bbar": {
+    "c3_targets_sig_p<0.01_and_tf_better": 2,
+    "c3_pass_threshold_10_of_15": false,
+    "c4_targets_d<-0.3": 4,
+    "c4_mean_d": -0.0740483316617251
+  },
+  "targetdiff": {
+    "c3_targets_sig_p<0.01_and_tf_better": 14,
+    "c3_pass_threshold_10_of_15": true,
+    "c4_targets_d<-0.3": 5,
+    "c4_mean_d": -0.0010860359723538012
+  }
+}

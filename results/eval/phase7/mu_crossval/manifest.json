@@ -1,0 +1,54 @@
+{
+  "git_sha": "4a62d0f4cb824b3f227017732cdecd7eea44c0bd",
+  "args": {
+    "subtask": "feature_swap",
+    "lmdb": "data/processed/chembl_conditional.lmdb",
+    "ckpt": "results/checkpoints/joint_final.pt",
+    "c2_report": "results/eval/phase3/c2_report.json",
+    "drugbank_smi": "data/external/drugbank_approved.smi",
+    "litpcba_dir": "data/external/litpcba_actives",
+    "out_root": "results/eval/phase7/mu_crossval",
+    "repo_root": "/home/zhao/code/ThermoFrag",
+    "max_records": null,
+    "n_laplace": 1000,
+    "n_seeds": 10,
+    "seed_steps": 3000,
+    "seed_batch_size": 1024,
+    "seed_hidden": 256,
+    "seed_lr": 0.001,
+    "seed_weight_decay": 1e-05,
+    "seed_y_noise": 0.3,
+    "seed_mu_beta": 1.0,
+    "seed_grad_clip": 5.0,
+    "seed_log_every": 500,
+    "feature_swaps": [
+      "all"
+    ],
+    "feature_steps": 3000,
+    "feature_batch_size": 1024,
+    "feature_seed": 42,
+    "feature_progress_every": 50000,
+    "device": "cuda",
+    "seed": 42,
+    "force": true,
+    "dry_run": false
+  },
+  "conda_env": "base",
+  "python": "/home/zhao/miniconda3/envs/tf-eval/bin/python",
+  "wall_seconds": 678.9087314605713,
+  "completed_utc": "2026-04-26T04:03:57Z",
+  "inputs": {
+    "lmdb": {
+      "path": "data/processed/chembl_conditional.lmdb",
+      "sha256": "a5dc5f10bfbab4b838e73d9dfaf371bc5ccd73d005254077aa165b576973110d"
+    },
+    "ckpt": {
+      "path": "results/checkpoints/joint_final.pt",
+      "sha256": "f6153fe8bd37ead66454183eecba0f230be9dfd03060daff0d08c1683a5ac0ff"
+    },
+    "c2_report": {
+      "path": "results/eval/phase3/c2_report.json",
+      "sha256": "924a17ece0fb0a21b9858838d916c6ef1b28ba2865d0344234f877c28ef8a360"
+    }
+  }
+}

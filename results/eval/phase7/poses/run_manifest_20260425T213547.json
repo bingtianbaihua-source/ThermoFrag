@@ -1,0 +1,19 @@
+{
+  "git_sha": "4a62d0f4cb824b3f227017732cdecd7eea44c0bd",
+  "args": {
+    "generator": "all",
+    "target": "all",
+    "top_k": 30,
+    "out_root": "results/eval/phase7/poses",
+    "receptors": "data/external/receptors",
+    "n_workers": 28,
+    "exhaustiveness": 8,
+    "num_modes": 5,
+    "seed": 42,
+    "dry_run": false,
+    "repo_root": "/home/zhao/code/ThermoFrag"
+  },
+  "conda_env": "base",
+  "python": "/home/zhao/miniconda3/envs/tf-eval/bin/python",
+  "wall_seconds": 12511.015362024307
+}

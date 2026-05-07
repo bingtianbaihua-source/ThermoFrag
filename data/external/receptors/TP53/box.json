@@ -1,0 +1,16 @@
+{
+  "pdb": "4HG7",
+  "center": [
+    -23.83,
+    7.53,
+    -14.05
+  ],
+  "size": [
+    22.5,
+    22.54,
+    22.5
+  ],
+  "cognate_resname": "NUT",
+  "cognate_n_atoms": 40,
+  "source": "cognate"
+}

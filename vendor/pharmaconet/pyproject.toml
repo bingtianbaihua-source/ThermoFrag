@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pharmaconet"
+version = "2.2.0"
+description = "PharmacoNet: Open-Source Software for Protein-based Pharmacophore Modeling and Virtual Screening"
+authors = [{ name = "Seonghwan Seo", email = "shwan0106@kaist.ac.kr" }]
+license = { text = "MIT" }
+requires-python = ">=3.10,<3.13"
+classifiers = [
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Development Status :: 4 - Beta",
+  "Operating System :: OS Independent",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "Topic :: Scientific/Engineering :: Chemistry",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "torch>=1.13.0",
+  "numpy",
+  "numba>=0.59",
+  "omegaconf>=2.3.0",
+  "molvoxel==0.2.0",
+  "gdown>=5.1.0",
+  "tqdm",
+  # chem&bioinfo
+  "rdkit",
+  "openbabel-wheel>=3.1.1.20",
+  "biopython>=1.83",
+]
+[project.optional-dependencies]
+appl = [
+  "torch>=2.3.1",
+  "torch-geometric>=2.4.0",
+  "torch-scatter>=2.1.2",
+  "torch-sparse>=0.6.18",
+  "torch-cluster>=1.6.3",
+]
+dev = [
+  "torch>=2.3.1",
+  "torch-geometric>=2.4.0",
+  "torch-scatter>=2.1.2",
+  "torch-sparse>=0.6.18",
+  "torch-cluster>=1.6.3",
+  "wandb",
+]
+[project.urls]
+Repository = "https://github.com/SeonghwanSeo/PharmacoNet"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+[tool.ruff.lint]
+select = ["E", "F", "B", "UP", "I", "T203"]
+ignore = ["E501", "E741"]
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+  "F401", # imported but unused
+  "E402", # Module level import not at top of file
+]
+
+[tool.basedpyright]
+pythonVersion = "3.10"
+typeCheckingMode = "standard"
+include = ["src/"]

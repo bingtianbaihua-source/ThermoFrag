@@ -1,0 +1,165 @@
+{
+  "baseline": "bbar",
+  "note": "BBAR has no pocket input; the same SMILES pool is scored against all 15 pockets. Pairing is fair because both BBAR and ThermoFrag are pocket-agnostic at generation time (pocket enters only at Vina).",
+  "checkpoints": {
+    "logp": {
+      "path": "/home/chaoxue/code/ThermoFrag/vendor/bbar_upstream/test/pretrained_model/logp.tar",
+      "sha256": "2664060e9e45fce526dba9f1cfbf691123bb47bc419bf323bf8dee49276d06a9",
+      "condition_value": 3.7289
+    },
+    "qed": {
+      "path": "/home/chaoxue/code/ThermoFrag/vendor/bbar_upstream/test/pretrained_model/qed.tar",
+      "sha256": "6364725970e440b27e7ed692fff4d16ad863071ca56e651ebb2939eec0c47283",
+      "condition_value": 0.6086
+    }
+  },
+  "conditions": {
+    "logp": 3.7289,
+    "qed": 0.6086
+  },
+  "condition_values_rationale": "Aggregated mean of logP and QED across the 15 LIT-PCBA y_raw vectors (results/eval/phase4/litpcba_targets/<t>/y_raw.npy, phi order: logP, qed, sa, tpsa, mw, hba, hbd, rotb).",
+  "n_pool_per_condition": 1000,
+  "sampling": {
+    "n_request_per_condition": 3500,
+    "n_keep_per_condition": 1000,
+    "seed": 1,
+    "window_size": 2000,
+    "alpha": 0.75,
+    "max_iteration": 10
+  },
+  "library": {
+    "path": "/home/chaoxue/code/ThermoFrag/vendor/bbar_upstream/data/ZINC/library.csv",
+    "n_blocks": 35230
+  },
+  "per_condition_stats": {
+    "logp": {
+      "condition": "logp",
+      "condition_value": 3.7289,
+      "n_requested": 3500,
+      "n_generator_fail": 3,
+      "n_invalid": 0,
+      "n_duplicate": 0,
+      "n_kept": 1000,
+      "seconds": 968.27
+    },
+    "qed": {
+      "condition": "qed",
+      "condition_value": 0.6086,
+      "n_requested": 3500,
+      "n_generator_fail": 2,
+      "n_invalid": 0,
+      "n_duplicate": 1,
+      "n_kept": 1000,
+      "seconds": 739.31
+    }
+  },
+  "per_target": {
+    "ADRB2": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "ALDH1": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "ESR_ago": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "ESR_antago": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "FEN1": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "GBA": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "IDH1": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "KAT2A": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "MAPK1": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "MTORC1": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "OPRK1": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "PKM2": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "PPARG": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "TP53": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    },
+    "VDR": {
+      "n_rows": 2000,
+      "n_per_condition": {
+        "logp": 1000,
+        "qed": 1000
+      }
+    }
+  },
+  "bbar_git_sha": "cf911bc7ea8d1b01bc83b9560bd6006589bc294e",
+  "wall_clock_seconds": 1720.75
+}

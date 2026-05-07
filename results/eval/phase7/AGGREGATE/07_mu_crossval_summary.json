@@ -1,0 +1,114 @@
+{
+  "task_id": "07_mu_crossval",
+  "completed_utc": "2026-04-26T04:03:57Z",
+  "thresholds": {
+    "sign_agreement_vs_chembl_pearson": {
+      "target": ">= 18 / 22 strong off-diag",
+      "observed": "18/18",
+      "pass": true
+    },
+    "cat_e_partial_corr_decisive": {
+      "target": "partial_corr(HBA, HBD | TPSA, MW) < 0 on raw ChEMBL",
+      "observed": "r = -0.5140 (p=0.00e+00)",
+      "pass": true
+    },
+    "laplace_robust_strong_offdiag": {
+      "target": ">= 18 / strong with 95% CI excluding 0",
+      "observed": "0/18",
+      "pass": false
+    },
+    "seed_stability_robust_strong_offdiag": {
+      "target": ">= 18 / strong with 95% seed CI excluding 0",
+      "observed": "17/18",
+      "pass": false
+    },
+    "seed_stability_sign_agreement": {
+      "target": ">= 18 / strong seed-mean signs match deterministic M",
+      "observed": "18/18",
+      "pass": true
+    },
+    "feature_swap_sign_preservation": {
+      "target": ">= 18 / strong off-diag preserve sign across feature swaps",
+      "observed": "14/18",
+      "pass": false
+    },
+    "cat_e_litpcba_corroboration": {
+      "target": "partial_corr(HBA, HBD | TPSA, MW) < 0 on LIT-PCBA actives (pooled)",
+      "observed": "r = -0.4155 (p=0.00e+00)",
+      "pass": true
+    }
+  },
+  "subtasks": {
+    "chembl_corr": {
+      "subtask": "chembl_corr",
+      "n_strong_off": 18,
+      "n_sign_match": 18,
+      "sign_match_threshold": 18,
+      "sign_match_pass": true,
+      "hba_hbd_marginal_r": -0.1554336729917653,
+      "hba_hbd_partial_tpsa_mw_r": -0.5140152720374477,
+      "hba_hbd_partial_tpsa_mw_p": 0.0,
+      "cat_e_decisive_pass": true,
+      "n_records": 64
+    },
+    "laplace": {
+      "subtask": "laplace",
+      "n_strong_off": 18,
+      "n_robust": 0,
+      "robust_threshold": 18,
+      "robust_pass": false,
+      "n_samples": 1000
+    },
+    "litpcba": {
+      "subtask": "litpcba",
+      "hba_hbd_partial_tpsa_mw_r": -0.4155422272628825,
+      "hba_hbd_partial_tpsa_mw_p": 0.0,
+      "cat_e_litpcba_pass": true,
+      "n": 9677
+    },
+    "seed_stability": {
+      "subtask": "seed_stability",
+      "n_strong_off": 18,
+      "n_sign_match": 18,
+      "n_robust": 17,
+      "robust_threshold": 18,
+      "robust_pass": false,
+      "sign_match_pass": true,
+      "n_seeds": 10,
+      "steps": 3000
+    },
+    "feature_swap": {
+      "subtask": "feature_swap",
+      "n_strong_off": 18,
+      "n_preserved_all_swaps": 14,
+      "preserve_threshold": 18,
+      "preserve_pass": false,
+      "swaps": {
+        "logp_slogp_vsa": {
+          "n_preserved": 18,
+          "n_strong_off": 18
+        },
+        "qed_unweighted": {
+          "n_preserved": 18,
+          "n_strong_off": 18
+        },
+        "sa_bertz": {
+          "n_preserved": 14,
+          "n_strong_off": 18
+        },
+        "tpsa_sp": {
+          "n_preserved": 18,
+          "n_strong_off": 18
+        }
+      },
+      "swap_definitions": {
+        "logp_slogp_vsa": "Replace Crippen MolLogP with a surface-binned SlogP_VSA average proxy: sum((bin_index-6.5)*SlogP_VSA_i)/sum(SlogP_VSA_i).",
+        "sa_bertz": "Replace Ertl SA with RDKit BertzCT graph-complexity score. This is a synthetic-complexity proxy, not RAscore.",
+        "tpsa_sp": "Replace RDKit TPSA with CalcTPSA(includeSandP=True).",
+        "qed_unweighted": "Replace Bickerton WEIGHT_MEAN QED with RDKit QED.WEIGHT_NONE."
+      },
+      "note": "Offline proxy perturbations: true XLogP3/RAscore/3D-PSA were not available in the local environment."
+    }
+  },
+  "notes": "Tier-1: chembl_corr + laplace + independent population. Tier-2: seed_stability retrains \u03bc-only heads. Tier-3 feature_swap uses offline proxy perturbations when external XLogP3/RAscore are unavailable."
+}

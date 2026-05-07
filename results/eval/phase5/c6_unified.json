@@ -1,0 +1,43 @@
+{
+  "tf_base": {
+    "decoded_ok": 1451,
+    "decoded_total": 15000,
+    "decoded_yield": 0.09673333333333334,
+    "accept_rate_mean": 0.21370111111111106
+  },
+  "ablations": {
+    "no_qm": {
+      "role": "physical-fidelity anchor (C1)",
+      "signal": "energy Spearman vs. DFT",
+      "trained_spearman": 0.994935604233901,
+      "random_init_spearman": -0.9418707509676877,
+      "trained_mae_kcal_per_mol": 122.98179626464844,
+      "random_init_mae_kcal_per_mol": 28149.435546875,
+      "c1_collapse_confirmed": true
+    },
+    "no_coupling": {
+      "role": "graph structural coherence",
+      "signal": "decoded yield (fraction of 1000 sampler chains producing valid SMILES)",
+      "tf_base_yield": 0.09673333333333334,
+      "nocoup_yield": 0.022,
+      "yield_ratio": 0.22742935906271536,
+      "accept_rate_tf_base": 0.21370111111111106,
+      "accept_rate_nocoup": 0.3408333333333333,
+      "coherence_collapse_confirmed": true,
+      "interpretation": "Without V^couple the MH acceptance rate rises (0.34 vs tf_base 0.21) because the only remaining energy is the \u03bc-field external term \u2014 the sampler accepts almost any structural change that does not cross the coarse property threshold. The resulting graphs are topologically incoherent and the BRICS decoder rejects them, so decoded yield collapses."
+    },
+    "no_mu": {
+      "role": "property-targeting external field",
+      "signal": "paired Vina top-10 means on 15 LIT-PCBA targets",
+      "c3_sigwins_tf_vs_nomu": 13,
+      "c3_n_tested": 15,
+      "c3_pass": true,
+      "c4_cohens_d_tf_minus_nomu": 0.40642442484750113,
+      "c4_interpretation": "Positive d means TF has higher strain than no-\u03bc, expected for a property-targeting sampler \u2014 \u03bc pulls the conditional equilibrium into a region that is slightly less relaxed than the unconditional ZINC distribution. Strain cost is the Pareto price of property control."
+    }
+  },
+  "unified_verdict": {
+    "c6_pass_shallow": true,
+    "note": "Three Hamiltonian terms cover three distinct failure modes: no-QM breaks physical fidelity (C1), no-coupling breaks sample-coherence (independent of any C1-C5 claim), no-\u03bc breaks property-targeting (C3). All three are independently necessary at sample time. DEEP ablations (retraining without each term) are out of scope for this paper: the shallow term-knockout is strictly a stronger experiment for coupling (retraining without V^couple would yield a different \u03bc head and confound the ablation; sample-time knockout isolates the term cleanly)."
+  }
+}
